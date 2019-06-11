@@ -1,0 +1,20 @@
+{
+    "name": "@amjs/create-index",
+    "version": "0.1.0",
+    "main": "index.js",
+    "description": "Allows to create a bundle index.js file with all listed resources from a directory",
+    "author": "Arturo Martínez <arturo.martinez@amartinez.dev>",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Wolfchamane/amjs-create-index.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "nodejs",
+        "module",
+        "indexer"
+    ],
+    "dependencies": {
+        "handlebars": "^4.1.2"
+    }
+}

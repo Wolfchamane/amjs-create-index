@@ -1,0 +1,12 @@
+{{#each list as |item|}}
+const {{item.className}} = require('{{item.path}}');
+{{/each}}
+
+/**
+ * @NOTICE: File auto-generated. DO NOT modify this file.
+ * @author  {{author}}
+ * @version {{version}}
+ * @license MIT
+ * @created {{date}}
+ */
+module.exports = {{toJSON tree}};
