@@ -15,6 +15,6 @@
         "indexer"
     ],
     "dependencies": {
-        "handlebars": "^4.1.2"
+        "@amjs/templater": "^0.1.1"
     }
 }

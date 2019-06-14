@@ -1,6 +1,7 @@
 const fs            = require('fs');
 const Handlebars    = require('handlebars');
 const path          = require('path');
+const templater     = require('@amjs/templater');
 
 /**
  * Returns a formatted JSON plain object as String
@@ -22,14 +23,10 @@ module.exports = (indexPath = '', context = {}) =>
     // Register toJSON helper within Handlebars
     Handlebars.registerHelper('toJSON', toJSON);
 
-    // Build template
-    let template = fs.readFileSync(path.resolve(__dirname, 'template.hbs')).toString();
-    template = Handlebars.compile(template);
-
     // Write output
     fs.writeFileSync(
         indexPath,
-        template(context),
+        templater(path.resolve(__dirname, 'template.hbs'), context),
         'utf-8'
     );
 };
