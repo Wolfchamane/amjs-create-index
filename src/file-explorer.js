@@ -11,7 +11,7 @@ const cwd = process.cwd();
  * @returns {Array}     Map of items
  * @throws  {Error}     If there's any problem
  */
-const fileExplorer = (root = '', source = '') =>
+const fileExplorer = (root = '', source = '', info) =>
 {
     let list = [];
 
@@ -21,7 +21,7 @@ const fileExplorer = (root = '', source = '') =>
         if (isDirectory(sourcePath))
         {
             fs.readdirSync(sourcePath).forEach(
-                item => list = list.concat(fileExplorer(sourcePath, item))
+                item => list = list.concat(fileExplorer(sourcePath, item, info))
             );
         }
         else
@@ -32,9 +32,11 @@ const fileExplorer = (root = '', source = '') =>
             sourcePath = sourcePath.join(path.sep);
 
             list.push({
-                className   : source.replace(/\..+$/, ''),
+                className   : `${info.prefix}${source.replace(/\..+$/, '')}`,
                 path        : `.${path.sep}${sourcePath}`
-            })
+            });
+
+            console.log(list);
         }
     }
     else

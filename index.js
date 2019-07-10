@@ -7,10 +7,11 @@ const treeBuild     = require('./src/tree-build');
 try
 {
     const { source, indexPath } = config();
-    const list = fileExplorer(source);
+    const info = getInfo();
+    const list = fileExplorer(source, '', info);
     const tree = treeBuild(list);
 
-    templater(indexPath, Object.assign({}, { list, tree}, getInfo()));
+    templater(indexPath, Object.assign({}, { list, tree }, info));
     process.exit(0);
 }
 catch(e)
