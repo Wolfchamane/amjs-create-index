@@ -1,6 +1,6 @@
 {
     "name": "@amjs/create-index",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "main": "index.js",
     "description": "Allows to create a bundle index.js file with all listed resources from a directory",
     "author": "Arturo Martínez <arturo.martinez@amartinez.dev>",

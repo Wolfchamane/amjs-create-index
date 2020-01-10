@@ -1,4 +1,4 @@
-# @amjs/create-index 0.1.3
+# @amjs/create-index 0.1.4
 
 ## Installation
 
